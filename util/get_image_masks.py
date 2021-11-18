@@ -14,7 +14,7 @@ def get_image_masks(img):
 		labels = measure.label(img_filtered, background=0)
 		blobs = np.unique(labels)
 		blobs = blobs[1:]
-		if len(blobs) == 1:
+		if len(blobs) == 1 or v == 2:
 			img_masks.append(img_filtered)
 		else:
 			for b in blobs:
